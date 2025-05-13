@@ -18,6 +18,7 @@ function App() {
   const voltarParaBusca = () => setTelaAtual('busca');
 
   return (
+<<<<<<< HEAD
     <div className="grid justify-content-center m-auto w-9 border-round">
       <div className="logo-container">
         <div className="logo">
@@ -52,3 +53,13 @@ function App() {
 }
 
 export default App;
+=======
+    <>
+      <Header />
+      <Home />
+    </>
+  );
+}
+
+export default App;
+>>>>>>> 3644cd99bcc4c61d2f50c24d7fa8963ca7397ffe
