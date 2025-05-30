@@ -18,35 +18,66 @@ function App() {
   const voltarParaBusca = () => setTelaAtual('busca');
 
   return (
-    <div className="grid justify-content-center m-auto w-9 border-round">
-      <div className="logo-container">
-        <div className="logo">
-        <img src={logo} alt="Logo" className="logo-img" />
-        </div>
-      </div>
+    <div
+      style={{
+        display: 'flex',
+        height: '100vh',
+        width: '100vw',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'black',
+        color: 'white',
+        padding: '20px',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          backgroundColor: '#222',
+          padding: '30px 40px',
+          borderRadius: '10px',
+          maxWidth: '700px',  // aumentado aqui
+          width: '100%',
+          boxSizing: 'border-box',
+          textAlign: 'center',
+        }}
+      >
+        <img
+          src={logo}
+          alt="Logo"
+          style={{
+            maxWidth: '150px',
+            marginBottom: '25px',
+            objectFit: 'contain',
+            userSelect: 'none',
+          }}
+        />
 
-      {telaAtual === 'busca' && (
-  <div className="flex align-items-center justify-content-center min-h-screen">
-    <div className="card-container text-center">
-      <div className="col-12">
-        <h1 className="titulo-busca">Qual a causa que você deseja apoiar?</h1>
-      </div>
-      <div className="col-12 flex justify-content-center mt-3">
-        <Busca />
-      </div>
-      <div className="col-12 mt-4">
-        <Button label="Ir para a Agenda Solidária" onClick={irParaAgenda} className="p-button-info" />
-      </div>
-    </div>
-  </div>
-)}
+        {telaAtual === 'busca' && (
+          <>
+            <h2 className="titulo-busca">Qual a causa que você deseja apoiar?</h2>
 
+            <div style={{ marginTop: '25px', width: '100%' }}>
+              <Busca style={{ width: '100%', fontSize: '1.1rem' }} />
+            </div>
 
-      {telaAtual === 'agenda' && (
-        <div className="col-12">
+            <div style={{ marginTop: '30px', width: '100%' }}>
+              <Button
+                label="Ir para a Agenda Solidária"
+                onClick={irParaAgenda}
+                className="p-button-info"
+                style={{ width: '100%', fontSize: '1.1rem' }}
+              />
+            </div>
+          </>
+        )}
+
+        {telaAtual === 'agenda' && (
           <AgendaSolidaria voltar={voltarParaBusca} />
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
