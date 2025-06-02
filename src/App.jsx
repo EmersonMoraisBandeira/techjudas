@@ -38,7 +38,7 @@ function App() {
           backgroundColor: '#222',
           padding: '30px 40px',
           borderRadius: '10px',
-          maxWidth: '700px',  // aumentado aqui
+          maxWidth: '700px',
           width: '100%',
           boxSizing: 'border-box',
           textAlign: 'center',
@@ -74,12 +74,11 @@ function App() {
           </>
         )}
 
-        {telaAtual === 'agenda' && (
-          <AgendaSolidaria voltar={voltarParaBusca} />
-        )}
+        {telaAtual === 'agenda' && <AgendaSolidaria voltar={voltarParaBusca} />}
       </div>
     </div>
   );
 }
 
 export default App;
+
